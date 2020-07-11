@@ -10,3 +10,12 @@ def home(request):
     }
 
     return render(request, 'home/home.html', context)
+
+def contact_us(request):
+    context={
+        'title':'Contact Us',
+        'contact':'active',
+    }
+    return render(request,'home/contact_us.html',context)
+def compare(request):
+    return render(request, 'home/compare.html')

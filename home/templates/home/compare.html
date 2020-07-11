@@ -1,0 +1,61 @@
+{% extends "home/base.html" %}
+{% load static i18n %}
+{% load static %}
+{% block custom_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/compare.css' %}">
+{% endblock %}
+{% block content %}
+{% get_current_language as MY_LANGUAGE %}
+<div class = "home-page">
+    <div class="compare">
+<div class="container py-2">
+{% if MY_LANGUAGE == 'en' %}
+ <form class="compare-form" action="" method="post">
+     <div class="form-group row">
+         <div class="col-md-6" id="studentAnswer">
+       <label for="optAnsw">{% trans 'Student Answer' %}</label>
+       <textarea name="optAnsw" rows="10" id="optAnsw"  class="form-control"></textarea>
+     </div>
+       <div class="col-md-6" id="optimalAnswer">
+       <label for="stdAnsw">{% trans 'Optimal Answer' %}</label>
+       <textarea name="stdAnsw" rows="10" id="stdAnsw" class="form-control"></textarea>
+       </div>
+     </div>
+     <br>
+     <div class="col-md-12 text-center" id="compare-results-button">
+    <button name="compare" class="btn btn-primary">{% trans 'Compare Answers!' %}</button>
+</div>
+<div class="col-md-12 text-center">
+  <br>
+  <label for="results" class="results-label">{% trans 'Results' %}</label>
+<textarea name="results" rows="5" id="results" class="form-control" readonly ></textarea>
+</div>
+   </form>
+    {% else %}
+    <form class="compare-form-arabic" action="process.html" method="post">
+     <div class="form-group row">
+         <div class="col-md-6" id="studentAnswerArabic">
+       <label for="optAnsw">{% trans 'Student Answer' %}</label>
+       <textarea name="optAnsw" rows="10" id="optAnswArabic"  class="form-control"></textarea>
+     </div>
+       <div class="col-md-6" id="optimalAnswerArabic">
+       <label for="stdAnsw">{% trans 'Optimal Answer' %}</label>
+       <textarea name="stdAnsw" rows="10" id="stdAnswArabic" class="form-control"></textarea>
+       </div>
+     </div>
+     <br>
+     <div class="col-md-12 text-center" id="compare-results-button-Arabic">
+    <button name="compare" class="btn btn-primary">{% trans 'Compare Answers!' %}</button>
+</div>
+<div class="col-md-12 text-center">
+  <br>
+  <label for="results" class="results-label-Arabic">{% trans 'Results' %}</label>
+<textarea name="results" rows="5" id="results-Arabic" class="form-control" readonly ></textarea>
+</div>
+   </form>
+    {% endif %}
+
+        </div>
+        </div>
+</div>
+{% endblock %}

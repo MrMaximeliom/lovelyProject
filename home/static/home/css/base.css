@@ -88,8 +88,8 @@ text-align: right;
 /* customizing site logo icon */
 .site-logo{
 border-radius:12px;
-width:40px;
-height:40px;
+width:35px;
+height:35px;
 }
 
 /* customizing window links of sign up link in header */
@@ -113,6 +113,7 @@ font-size: 18px;
 /* customizing  links of sign-up dorp-down button in header  */
 #ArabicSignUpOptions.dropdown-menu.show a{
 color:black;
+direction: rtl;
 }
 /* customizing  links of sign-up dorp-down button in header when hovered  */
 #ArabicSignUpOptions.dropdown-menu.show a:hover{
@@ -252,6 +253,10 @@ background-color:#331F2A;
 #nav a{
 /*color:#941351;*/
 color:white;
+}
+.links-in-navbar{
+display: inherit;
+margin-left: 60px;
 }
 
 /* ends */
@@ -472,14 +477,15 @@ width: 100%;
 .footer-menu li:last-child a:after {
 	display: none;
 }
-.custom-footer-links a:hover {
-
-color:#e77b73;
-}
 /* changing behaviour of footer menu list item with a tag when hovered */
+.footer-menu li a:hover {
+
+
+}
+
 #footer.footer-menu a:hover{
 border:none;
-
+color:#e77b73;
 text-decoration:none;
 }
 
@@ -493,13 +499,13 @@ text-decoration:none;
 	margin-right: 10px;
 	position: relative;
 }
-/* changing behaviour of footer menu list item  after a tag */
+/* changing behaviour of footer menu list item with a tag after being clicked */
 .footer-menu li a:after {
 	position: absolute;
 	content: "|";
 	right: 0;
 	top: 0;
-	color:white
+	color:white;
 }
 /* copyright section of footer  */
 .copyright {
@@ -512,6 +518,7 @@ text-decoration:none;
 /* link to authors in copyright  */
 .copyright a {
 color:#F0C808;
+text-decoration: none;
 
 }
 /* customizing footer section (currently not used ) */
